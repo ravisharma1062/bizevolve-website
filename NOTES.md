@@ -8,9 +8,10 @@ Plain static site. No build step. Open `index.html` through any web server and i
 - **Everything is local.** GSAP, ScrollTrigger and Lenis are in `vendor/`. Fonts (Sora and Inter) are in `assets/fonts/`. Nothing loads from a CDN at runtime.
 - **All business details live in `js/config.js`.** Phone, WhatsApp number, email, prices, sample links, reviews.
 - **The page works first as plain HTML.** Effects are added on top by JavaScript. With JavaScript off, everything is visible. FAQ uses `<details>`. WhatsApp, call and email are normal links.
+- **No custom cursor.** The normal system cursor is used (the round cursor was removed on request). Magnetic buttons and card tilt remain.
 - **Three animation tiers, chosen at start-up** (`data-tier` on `<html>`):
-  - `full`: everything (aurora canvas, smooth scroll, custom cursor, tilt, pinned sample showcase).
-  - `lite`: weak phone, data saver, slow network or low frame rate. Simple fades, marquee, counters, timeline. No canvas, smooth scroll, cursor or tilt.
+  - `full`: everything (aurora canvas, smooth scroll, tilt, magnetic buttons, pinned sample showcase).
+  - `lite`: weak phone, data saver, slow network or low frame rate. Simple fades, marquee, counters, timeline. No canvas, smooth scroll or tilt.
   - `minimal`: reduced motion, JavaScript off, very old browser, or the visitor pressed "Reduce motion" in the footer. No animation at all.
   - To test a tier, add `?tier=full`, `?tier=lite` or `?tier=minimal` to the address.
 - **Safety rules.** Content is only hidden by JavaScript after GSAP has loaded. If anything fails, `Biz.anim.fail()` shows everything. The preloader is removed after 2.2 seconds at most.

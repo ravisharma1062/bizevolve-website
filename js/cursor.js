@@ -1,4 +1,4 @@
-/* cursor.js - custom cursor, magnetic buttons, card tilt, hero 3D tilt and mouse parallax.
+/* cursor.js - magnetic buttons, card tilt, hero 3D tilt and mouse parallax.
    Desktop with a fine pointer only (Full tier). Touch screens never run this. */
 (function () {
   'use strict';
@@ -9,32 +9,6 @@
     if (!mm || !mm('(hover: hover) and (pointer: fine)').matches) return;
     var root = document.documentElement, $ = Biz.$, $$ = Biz.$$;
     var g = window.gsap;
-
-    /* ----- cursor dot + trailing ring ----- */
-    var dot = $('#cursorDot'), ring = $('#cursorRing'), label = ring ? ring.firstElementChild : null;
-    var mx = -100, my = -100, rx = -100, ry = -100, raf = 0, started = false;
-    function loop() {
-      rx += (mx - rx) * .18; ry += (my - ry) * .18;
-      dot.style.transform = 'translate3d(' + mx + 'px,' + my + 'px,0)';
-      ring.style.transform = 'translate3d(' + rx + 'px,' + ry + 'px,0)';
-      if (Math.abs(mx - rx) > .1 || Math.abs(my - ry) > .1) raf = requestAnimationFrame(loop); else raf = 0;
-    }
-    window.addEventListener('pointermove', function (e) {
-      if (e.pointerType && e.pointerType !== 'mouse') return;
-      if (!started) { started = true; root.classList.add('has-cursor'); }
-      mx = e.clientX; my = e.clientY;
-      if (!raf) raf = requestAnimationFrame(loop);
-    }, { passive: true });
-    document.addEventListener('pointerover', function (e) {
-      var t = e.target; if (!t.closest) return;
-      var view = t.closest('.sample__open');
-      var link = t.closest('a, button, summary, .tilt, input, select, textarea');
-      ring.classList.toggle('is-view', !!view);
-      ring.classList.toggle('is-link', !!link && !view);
-      if (label) label.textContent = view ? 'View' : '';
-    });
-    document.addEventListener('mouseleave', function () { ring.style.opacity = 0; dot.style.opacity = 0; });
-    document.addEventListener('mouseenter', function () { ring.style.opacity = 1; dot.style.opacity = 1; });
 
     /* ----- magnetic buttons ----- */
     $$('.magnetic').forEach(function (b) {

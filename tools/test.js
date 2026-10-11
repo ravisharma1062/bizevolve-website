@@ -194,7 +194,7 @@ async function scrollThrough(page) {
     const vis = visL.length;
     ok(t + ' tier: complete page, no console issues', vis === 0 && tp.logs.length === 0, vis + ' ' + visL.slice(0, 6).join(' ; ') + ' ' + tp.logs.join('|'));
     ok(t + ' tier: data-tier set', (await tp.getAttribute('html', 'data-tier')) === t);
-    if (t === 'lite') ok('lite: no lenis, no canvas, no cursor', !(await tp.evaluate(() => document.documentElement.classList.contains('lenis') || document.documentElement.classList.contains('has-cursor'))) && !(await tp.$eval('#heroCanvas', e => e.classList.contains('is-on'))));
+    if (t === 'lite') ok('lite: no lenis, no canvas', !(await tp.evaluate(() => document.documentElement.classList.contains('lenis') || document.documentElement.classList.contains('has-cursor'))) && !(await tp.$eval('#heroCanvas', e => e.classList.contains('is-on'))));
     if (t === 'full') ok('full: lenis + canvas running', (await tp.evaluate(() => document.documentElement.classList.contains('lenis'))) && (await tp.$eval('#heroCanvas', e => e.classList.contains('is-on'))));
   }
 
