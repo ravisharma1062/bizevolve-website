@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0B1020">
+<title>BizEvolve | Websites for Local Businesses | Go Online in 7 Days</title>
+<meta name="description" content="BizEvolve builds simple, beautiful websites for local businesses in Bangalore and Bihar. Get found on Google and get customers on WhatsApp. Live in 7 days.">
+<link rel="canonical" href="https://bizevolve.in/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BizEvolve">
+<meta property="og:title" content="BizEvolve | Websites for Local Businesses | Go Online in 7 Days">
+<meta property="og:description" content="Simple, beautiful websites for shops, clinics, coaching centres and small businesses. Get found on Google. Get customers on WhatsApp.">
+<meta property="og:url" content="https://bizevolve.in/">
+<meta property="og:image" content="https://bizevolve.in/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="BizEvolve - Modernize your business. Go online in 7 days.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BizEvolve | Websites for Local Businesses">
+<meta name="twitter:description" content="Simple, beautiful websites for local businesses. Live in 7 days.">
+<meta name="twitter:image" content="https://bizevolve.in/assets/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "BizEvolve",
+  "url": "https://bizevolve.in/",
+  "telephone": "+918249641675",
+  "email": "sakshirsharma@gmail.com",
+  "description": "BizEvolve builds simple, beautiful websites for local businesses in Bangalore and Bihar. Live in 7 days.",
+  "areaServed": ["Bangalore", "Bihar"],
+  "address": { "@type": "PostalAddress", "addressLocality": "Bangalore", "addressRegion": "Karnataka", "addressCountry": "IN" }
+}
+</script>
+
+<!-- Start-up check: runs before first paint. Picks the animation tier (Section 11.3 of the plan). -->
+<script>
+(function () {
+  var d = document.documentElement;
+  d.className = d.className.replace('no-js', 'js');
+  var tier = 'full';
+  try {
+    var pref = null;
+    try { pref = localStorage.getItem('biz-reduce-motion'); } catch (e) {}
+    var mm = window.matchMedia;
+    var old = !mm || !window.IntersectionObserver || !window.requestAnimationFrame || !('classList' in d) || !Function.prototype.bind;
+    if (old || pref === '1' || (mm && mm('(prefers-reduced-motion: reduce)').matches)) tier = 'minimal';
+    else {
+      var n = navigator, c = n.connection || n.mozConnection || n.webkitConnection;
+      if ((n.deviceMemory && n.deviceMemory <= 2) || (n.hardwareConcurrency && n.hardwareConcurrency <= 2) ||
+          (c && (c.saveData || /(^|-)2g$/.test(c.effectiveType || '')))) tier = 'lite';
+    }
+  } catch (e) { tier = 'minimal'; }
+  d.setAttribute('data-tier', tier);
+  if (window.CSS && CSS.registerProperty) d.className += ' has-props';
+  var q = location.search.match(/[?&]tier=(full|lite|minimal)/);   // handy for testing
+  if (q) d.setAttribute('data-tier', q[1]);
+})();
+</script>
+
+<link rel="preload" href="assets/fonts/sora-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+<!-- Shared SVG gradients and small icons -->
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="g-brand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7C3AED"/><stop offset="1" stop-color="#06B6D4"/></linearGradient>
+    <linearGradient id="g-warm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF4D8D"/><stop offset="1" stop-color="#FFB020"/></linearGradient>
+    <linearGradient id="g-fresh" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#06B6D4"/><stop offset="1" stop-color="#10B981"/></linearGradient>
+  </defs>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M12 3a9 9 0 00-7.7 13.6L3 21l4.5-1.2A9 9 0 1012 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.8 8.3c-.4.9-.2 2.1.9 3.6 1.1 1.5 2.3 2.4 3.5 2.8.9.3 1.7 0 2.1-.6.2-.3.1-.5-.2-.7l-1.3-.7c-.2-.1-.4-.1-.6.1l-.5.6c-.9-.3-2-1.3-2.4-2.3l.5-.5c.2-.2.2-.4.1-.6L10 7.9c-.2-.3-.9-.3-1.2.4z" fill="currentColor"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 7.5l8 5.5 8-5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 005 9.5C5 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M12 2c3 2 5 6 5 10l-2 3H9l-2-3c0-4 2-8 5-10z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="1.8" fill="currentColor"/><path d="M9 15l-2 5 3-1.5M15 15l2 5-3-1.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l2.2 6.3L21 9l-5 4.2L17.5 20 12 16.5 6.5 20 8 13.2 3 9l6.8-.7z" fill="currentColor"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Preloader: only visible in the Full tier. Removed after 2.5 seconds at most. -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader__inner">
+    <svg class="logo-mark logo-mark--big" viewBox="0 0 64 64" width="96" height="96">
+      <rect class="lm-bg" x="2" y="2" width="60" height="60" rx="18" fill="url(#g-brand)"/>
+      <path class="lm-steps" d="M15 46h10V36h10V26h10V16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="100"/>
+      <circle class="lm-dot" cx="49" cy="14" r="4" fill="#FFB020"/>
+    </svg>
+    <div class="preloader__word">Biz<span class="grad-text">Evolve</span></div>
+  </div>
+  <div class="preloader__wipe"></div>
+</div>
+
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"><span></span></div>
+<div class="bg-glow" id="bgGlow" aria-hidden="true"></div>
+<div class="cursor" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"><span></span></div>
+
+<!-- ============ NAVIGATION ============ -->
+<header class="nav" id="nav">
+  <div class="nav__inner container">
+    <a class="logo" href="#top" aria-label="BizEvolve, back to top">
+      <svg class="logo-mark" viewBox="0 0 64 64" width="38" height="38" aria-hidden="true" focusable="false">
+        <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#g-brand)"/>
+        <path d="M15 46h10V36h10V26h10V16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="49" cy="14" r="4" fill="#FFB020"/>
+      </svg>
+      <span class="logo__word">Biz<span class="grad-text">Evolve</span></span>
+    </a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#samples">Samples</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#how">How it works</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn--wa btn--sm nav__cta" data-wa href="https://wa.me/918249641675?text=Hi%20BizEvolve!%20I%20want%20a%20website%20for%20my%20business.%20Can%20you%20help%20me%3F" target="_blank" rel="noopener noreferrer">
+      <svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>WhatsApp us</span>
+    </a>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <nav class="menu__links" aria-label="Mobile">
+    <a href="#services">Services</a>
+    <a href="#samples">Samples</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#how">How it works</a>
+    <a href="#about">About</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="btn btn--wa menu__cta" data-wa href="https://wa.me/918249641675?text=Hi%20BizEvolve!%20I%20want%20a%20website%20for%20my%20business.%20Can%20you%20help%20me%3F" target="_blank" rel="noopener noreferrer">
+    <svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>WhatsApp us</span>
+  </a>
+</div>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero section--dark" id="top" data-accent="violet">
+  <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero__aurora" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="shapes" aria-hidden="true">
+    <span class="shape shape--ring" data-depth="0.6"></span>
+    <span class="shape shape--sq" data-depth="1.2"></span>
+    <span class="shape shape--blob" data-depth="0.9"></span>
+    <span class="shape shape--star" data-depth="1.5"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></span>
+    <span class="shape shape--ring2" data-depth="1"></span>
+  </div>
+
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="chip chip--glass" data-hero-in>Websites for local businesses</p>
+      <h1 class="hero__title">
+        <span class="hero__line1" data-split>Modernize your business.</span>
+        <span class="hero__line2" data-hero-in><span class="aurora-text">Go online in</span> <span class="seven">7</span> <span class="aurora-text">days.</span></span>
+      </h1>
+      <p class="hero__lead" data-hero-in>BizEvolve builds simple, beautiful websites for shops, clinics, coaching centres and small businesses. Get found on Google. Get customers on WhatsApp.</p>
+      <div class="hero__btns" data-hero-in>
+        <a class="btn btn--wa btn--lg magnetic" data-wa href="https://wa.me/918249641675?text=Hi%20BizEvolve!%20I%20want%20a%20website%20for%20my%20business.%20Can%20you%20help%20me%3F" target="_blank" rel="noopener noreferrer">
+          <svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Chat on WhatsApp</span><svg class="i i--arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+        <a class="btn btn--ghost btn--lg magnetic" href="#samples"><span>See sample sites</span></a>
+      </div>
+      <ul class="trust" data-hero-in>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>7-day delivery</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>2 rounds of changes</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Works on every phone</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>No tech skills needed</li>
+      </ul>
+    </div>
+
+    <!-- Hero visual: "website builds itself". Made-up sample content only. -->
+    <div class="hero__visual" data-hero-in>
+      <div class="scene" id="scene">
+        <div class="scene__tilt">
+          <div class="browser">
+            <div class="browser__bar"><i></i><i></i><i></i><span class="browser__url">yourbusiness.in</span></div>
+            <div class="browser__body">
+              <div class="b-head b-in b-in--1">
+                <span class="b-logo"></span>
+                <span class="b-nav"><i></i><i></i><i></i></span>
+                <span class="b-btn"></span>
+              </div>
+              <div class="b-hero b-in b-in--2">
+                <div class="b-copy">
+                  <span class="b-type"><span>Fresh food,</span></span>
+                  <span class="b-type b-type--2"><span>made with love.</span></span>
+                  <span class="b-sub"></span>
+                </div>
+                <div class="b-img b-in b-in--3"><svg viewBox="0 0 120 90" aria-hidden="true"><circle cx="86" cy="26" r="12" fill="#FFB020"/><path d="M0 90V62l30-26 26 22 20-14 44 30v16z" fill="#fff" opacity=".55"/><path d="M0 90V74l36-20 30 18 24-10 30 16v12z" fill="#fff" opacity=".85"/></svg></div>
+              </div>
+              <div class="b-cards b-in b-in--4"><span></span><span></span><span></span></div>
+              <div class="b-wa b-in b-in--5"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Order on WhatsApp</span></div>
+            </div>
+            <div class="bubble"><span class="bubble__dot"></span><div><strong>New enquiry!</strong><span>"Are you open today?"</span></div></div>
+          </div>
+          <div class="phone-mini" aria-hidden="true">
+            <i></i><span></span><span></span><span class="short"></span><b></b>
+          </div>
+        </div>
+        <span class="orbit-chip orbit-chip--1">WhatsApp</span>
+        <span class="orbit-chip orbit-chip--2">Google Maps</span>
+        <span class="orbit-chip orbit-chip--3">Mobile ready</span>
+        <span class="orbit-chip orbit-chip--4">Fast setup</span>
+      </div>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#why" aria-label="Scroll down"><span class="scroll-cue__mouse"><i></i></span></a>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<section class="marquee section--dark" aria-label="Businesses we help">
+  <div class="marquee__row" data-dir="left">
+    <ul class="marquee__track">
+      <li>Coaching centres</li><li>Clinics</li><li>Salons</li><li>Tiffin services</li><li>Tutors</li><li>Photographers</li>
+      <li>Boutiques</li><li>Gyms</li><li>Repair shops</li><li>Restaurants</li><li>Small traders</li><li>Event planners</li>
+    </ul>
+  </div>
+  <div class="marquee__row marquee__row--2" data-dir="right" aria-hidden="true">
+    <ul class="marquee__track">
+      <li>Small traders</li><li>Event planners</li><li>Restaurants</li><li>Repair shops</li><li>Gyms</li><li>Boutiques</li>
+      <li>Photographers</li><li>Tutors</li><li>Tiffin services</li><li>Salons</li><li>Clinics</li><li>Coaching centres</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ WHY A WEBSITE ============ -->
+<section class="section section--light" id="why" data-accent="cyan">
+  <div class="container">
+    <header class="section__head">
+      <p class="eyebrow">Why a website</p>
+      <h2 data-split>Why your business needs a website</h2>
+    </header>
+    <div class="grid grid--3 stagger">
+      <article class="card card--why tilt" data-reveal>
+        <span class="icon-badge icon-badge--brand">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" pathLength="100"/><path d="M16 16l5 5" pathLength="100"/></svg>
+        </span>
+        <h3>Be found.</h3>
+        <p>When people search on Google, a website helps them find you.</p>
+      </article>
+      <article class="card card--why tilt" data-reveal>
+        <span class="icon-badge icon-badge--warm">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z" pathLength="100"/><path d="M8.5 12l2.5 2.5 4.5-5" pathLength="100"/></svg>
+        </span>
+        <h3>Look trusted.</h3>
+        <p>A clean website shows that your business is real and professional.</p>
+      </article>
+      <article class="card card--why tilt" data-reveal>
+        <span class="icon-badge icon-badge--fresh">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H10l-5 4v-4H4z" pathLength="100"/><path d="M8 9.5h8M8 12.5h5" pathLength="100"/></svg>
+        </span>
+        <h3>Get enquiries 24/7.</h3>
+        <p>Customers can see your services and message you on WhatsApp any time.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROMISE STRIP ============ -->
+<section class="promise section--dark" aria-label="Our promise" data-accent="pink">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="container promise__grid">
+    <div class="promise__item"><strong class="promise__num"><span class="count" data-to="7">7</span></strong><span>days to go live</span></div>
+    <div class="promise__item"><strong class="promise__num"><span class="count" data-to="2">2</span></strong><span>rounds of changes</span></div>
+    <div class="promise__item"><strong class="promise__num"><span class="count" data-to="24">24</span>/<span class="count" data-to="7">7</span></strong><span>online</span></div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section section--light" id="services" data-accent="violet">
+  <div class="container">
+    <header class="section__head">
+      <p class="eyebrow">Services</p>
+      <h2 data-split>What you get</h2>
+    </header>
+    <div class="grid grid--3 stagger">
+      <article class="card card--service tilt" data-reveal>
+        <span class="icon-badge icon-badge--brand"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3" pathLength="100"/><path d="M8 8h8M8 12h8M8 16h4" pathLength="100"/></svg></span>
+        <h3>One-page website</h3>
+        <p>A clean, mobile-friendly page with your business name, photos, services and prices.</p>
+      </article>
+      <article class="card card--service tilt" data-reveal>
+        <span class="icon-badge icon-badge--fresh"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 00-7.7 13.6L3 21l4.5-1.2A9 9 0 1012 3z" pathLength="100"/><path d="M9 8.5c-.4 3 2.4 6 5.8 6.4" pathLength="100"/></svg></span>
+        <h3>WhatsApp and call buttons</h3>
+        <p>Customers tap once to message or call you.</p>
+      </article>
+      <article class="card card--service tilt" data-reveal>
+        <span class="icon-badge icon-badge--warm"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 005 9.5C5 14.8 12 21 12 21z" pathLength="100"/><circle cx="12" cy="9.5" r="2.5" pathLength="100"/></svg></span>
+        <h3>Google Maps and Google Business</h3>
+        <p>Show your location and help people find you on Google.</p>
+      </article>
+      <article class="card card--service tilt" data-reveal>
+        <span class="icon-badge icon-badge--brand"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" pathLength="100"/><path d="M7 10h10M7 14h6" pathLength="100"/></svg></span>
+        <h3>Contact form</h3>
+        <p>Enquiries reach you quickly.</p>
+      </article>
+      <article class="card card--service tilt" data-reveal>
+        <span class="icon-badge icon-badge--fresh"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" pathLength="100"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" pathLength="100"/></svg></span>
+        <h3>Domain and hosting set-up</h3>
+        <p>We set up your web address. It is registered in your name.</p>
+      </article>
+      <article class="card card--service tilt" data-reveal>
+        <span class="icon-badge icon-badge--warm"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 00-14.5-3.5M4 13a8 8 0 0014.5 3.5" pathLength="100"/><path d="M5 3v5h5M19 21v-5h-5" pathLength="100"/></svg></span>
+        <h3>Updates and yearly care</h3>
+        <p>Small changes and yearly renewal help, so your site stays fresh.</p>
+      </article>
+    </div>
+    <div class="soon" data-reveal>
+      <span class="soon__label">Coming soon</span>
+      <ul>
+        <li>Professional multi-page websites</li>
+        <li>Mobile apps</li>
+        <li>Social media content</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SAMPLES ============ -->
+<section class="samples section--dark" id="samples" data-accent="cyan">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="samples__pin">
+    <div class="container">
+      <header class="section__head section__head--left">
+        <p class="eyebrow">Samples</p>
+        <h2 data-split>Sample concepts</h2>
+        <p class="section__sub">These are example designs for made-up businesses, to show what your website could look like.</p>
+      </header>
+    </div>
+    <div class="samples__viewport">
+      <div class="samples__track" id="samplesTrack">
+
+        <!-- Sample 1: Coaching centre -->
+        <article class="sample" data-sample="coaching">
+          <button class="sample__open" type="button" data-open-sample="coaching" aria-label="Sample concept: Coaching centre. Open preview">
+            <span class="sample__badge">Sample concept</span>
+            <div class="device" aria-hidden="true">
+              <div class="device__screen">
+                <div class="mock mock--coaching" data-mock="coaching">
+                  <div class="mock__scroll">
+                    <div class="m-top"><span class="m-logo"></span><b>Bright Path Classes</b><span class="m-menu"><i></i><i></i></span></div>
+                    <div class="m-hero"><small>Class 6 to 12 and exams</small><p class="m-title">Learn with confidence.</p><span class="m-btn">Book a free demo</span></div>
+                    <div class="m-block"><p class="m-sub">Weekly schedule</p>
+                      <div class="m-row"><span>Maths, Class 10</span><em>5:00 PM</em></div>
+                      <div class="m-row"><span>Physics, Class 12</span><em>6:30 PM</em></div>
+                      <div class="m-row"><span>Biology, NEET</span><em>7:30 PM</em></div>
+                    </div>
+                    <div class="m-block"><p class="m-sub">Fees</p>
+                      <div class="m-chips"><span><b>Basic</b>per month</span><span class="on"><b>Plus</b>per month</span><span><b>Pro</b>per month</span></div>
+                    </div>
+                    <div class="m-block m-block--map"><p class="m-sub">Find us</p><div class="m-map"></div></div>
+                    <div class="m-foot"><span class="m-btn m-btn--wa">Chat on WhatsApp</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </button>
+          <div class="sample__info">
+            <h3>Coaching centre concept</h3>
+            <p>Calm blue design with class schedule and fees blocks.</p>
+            <button class="btn btn--ghost btn--sm" type="button" data-open-sample="coaching"><span>View concept</span><svg class="i i--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </article>
+
+        <!-- Sample 2: Salon -->
+        <article class="sample" data-sample="salon">
+          <button class="sample__open" type="button" data-open-sample="salon" aria-label="Sample concept: Salon. Open preview">
+            <span class="sample__badge">Sample concept</span>
+            <div class="device" aria-hidden="true">
+              <div class="device__screen">
+                <div class="mock mock--salon" data-mock="salon">
+                  <div class="mock__scroll">
+                    <div class="m-top"><span class="m-logo"></span><b>Glow Studio</b><span class="m-menu"><i></i><i></i></span></div>
+                    <div class="m-hero"><small>Hair, skin and bridal</small><p class="m-title">Glow up, every day.</p><span class="m-btn">Book your visit</span></div>
+                    <div class="m-block"><p class="m-sub">Our services</p>
+                      <div class="m-row"><span>Haircut and styling</span><em>&rarr;</em></div>
+                      <div class="m-row"><span>Facial and glow</span><em>&rarr;</em></div>
+                      <div class="m-row"><span>Bridal makeup</span><em>&rarr;</em></div>
+                      <div class="m-row"><span>Hair colour</span><em>&rarr;</em></div>
+                    </div>
+                    <div class="m-block"><p class="m-sub">Look book</p>
+                      <div class="m-tiles"><span></span><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="m-block"><p class="m-sub">Opening hours</p>
+                      <div class="m-row"><span>Mon to Sat</span><em>10 AM to 8 PM</em></div>
+                      <div class="m-row"><span>Sunday</span><em>By booking</em></div>
+                    </div>
+                    <div class="m-foot"><span class="m-btn m-btn--wa">Book on WhatsApp</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </button>
+          <div class="sample__info">
+            <h3>Salon concept</h3>
+            <p>Pink and gold design with services and a booking button.</p>
+            <button class="btn btn--ghost btn--sm" type="button" data-open-sample="salon"><span>View concept</span><svg class="i i--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </article>
+
+        <!-- Sample 3: Tiffin service -->
+        <article class="sample" data-sample="tiffin">
+          <button class="sample__open" type="button" data-open-sample="tiffin" aria-label="Sample concept: Tiffin service. Open preview">
+            <span class="sample__badge">Sample concept</span>
+            <div class="device" aria-hidden="true">
+              <div class="device__screen">
+                <div class="mock mock--tiffin" data-mock="tiffin">
+                  <div class="mock__scroll">
+                    <div class="m-top"><span class="m-logo"></span><b>Ghar Ka Dabba</b><span class="m-menu"><i></i><i></i></span></div>
+                    <div class="m-hero"><small>Daily tiffin service</small><p class="m-title">Home-style meals, at your door.</p><span class="m-btn">See today's menu</span></div>
+                    <div class="m-block"><p class="m-sub">This week's menu</p>
+                      <div class="m-row"><span>Monday</span><em>Dal, rice, sabzi</em></div>
+                      <div class="m-row"><span>Tuesday</span><em>Roti, paneer</em></div>
+                      <div class="m-row"><span>Wednesday</span><em>Khichdi, curd</em></div>
+                    </div>
+                    <div class="m-block"><p class="m-sub">Plans</p>
+                      <div class="m-chips"><span><b>Lunch</b>daily</span><span class="on"><b>Both</b>daily</span><span><b>Dinner</b>daily</span></div>
+                    </div>
+                    <div class="m-block"><p class="m-sub">We deliver to</p>
+                      <div class="m-tags"><span>Near you</span><span>Offices</span><span>PGs</span></div>
+                    </div>
+                    <div class="m-foot"><span class="m-btn m-btn--wa">Order on WhatsApp</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </button>
+          <div class="sample__info">
+            <h3>Tiffin service concept</h3>
+            <p>Fresh green design with a menu and WhatsApp order button.</p>
+            <button class="btn btn--ghost btn--sm" type="button" data-open-sample="tiffin"><span>View concept</span><svg class="i i--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section section--light" id="pricing" data-accent="pink">
+  <div class="container">
+    <header class="section__head">
+      <p class="eyebrow">Pricing</p>
+      <h2 data-split>Simple, honest pricing</h2>
+      <p class="section__sub">Starting prices. The final price depends on your needs. You pay the domain fee at cost, and the domain is registered in your name.</p>
+    </header>
+    <div class="grid grid--3 grid--pricing stagger">
+      <article class="plan" data-reveal data-plan="starter">
+        <h3>Starter</h3>
+        <p class="plan__price" data-price="starter">From ₹3,000</p>
+        <ul class="ticks">
+          <li>One-page mobile-friendly site</li>
+          <li>Business name, photos, services, address and map</li>
+          <li>WhatsApp and call buttons</li>
+          <li>Free hosting set up</li>
+          <li>2 rounds of changes</li>
+          <li>Ready in 7 days</li>
+        </ul>
+        <a class="btn btn--dark btn--block" data-wa-plan="Starter" href="https://wa.me/918249641675?text=Hi%20BizEvolve!%20I%20am%20interested%20in%20the%20Starter%20plan.%20Can%20you%20help%20me%3F" target="_blank" rel="noopener noreferrer"><span>Get this plan</span><svg class="i i--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="plan plan--featured" data-reveal data-plan="standard">
+        <span class="plan__ribbon">Most popular</span>
+        <h3>Standard</h3>
+        <p class="plan__price" data-price="standard">From ₹6,000</p>
+        <ul class="ticks">
+          <li>Everything in Starter</li>
+          <li>Domain set up in your name</li>
+          <li>Contact form</li>
+          <li>Google Business link and basic search settings</li>
+          <li>Customer reviews section</li>
+        </ul>
+        <a class="btn btn--wa btn--block" data-wa-plan="Standard" href="https://wa.me/918249641675?text=Hi%20BizEvolve!%20I%20am%20interested%20in%20the%20Standard%20plan.%20Can%20you%20help%20me%3F" target="_blank" rel="noopener noreferrer"><span>Get this plan</span><svg class="i i--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="plan" data-reveal data-plan="growth">
+        <h3>Growth</h3>
+        <p class="plan__price" data-price="growth">From ₹10,000</p>
+        <ul class="ticks">
+          <li>Everything in Standard</li>
+          <li>Photo gallery</li>
+          <li>UPI or Razorpay payment link</li>
+          <li>1 month of support</li>
+        </ul>
+        <a class="btn btn--dark btn--block" data-wa-plan="Growth" href="https://wa.me/918249641675?text=Hi%20BizEvolve!%20I%20am%20interested%20in%20the%20Growth%20plan.%20Can%20you%20help%20me%3F" target="_blank" rel="noopener noreferrer"><span>Get this plan</span><svg class="i i--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+    </div>
+    <p class="care" data-reveal><strong>Yearly care plan: ₹1,500 to ₹3,000 a year.</strong> Domain renewal help, small updates, and regular checks.</p>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section section--dark how" id="how" data-accent="emerald">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="container">
+    <header class="section__head">
+      <p class="eyebrow">How it works</p>
+      <h2 data-split>From hello to live in 7 days</h2>
+    </header>
+    <div class="steps-wrap" id="stepsWrap">
+    <span class="steps__line" aria-hidden="true"><i id="stepsFill"></i></span>
+    <ol class="steps" id="steps">
+      <li class="step">
+        <span class="step__dot"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H10l-5 4v-4H4z"/></svg></span>
+        <p class="step__day">Day 1</p>
+        <h3>Talk</h3>
+        <p>Tell us about your business. We agree on the plan and price.</p>
+      </li>
+      <li class="step">
+        <span class="step__dot"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 8h8M8 12h8M8 16h4"/></svg></span>
+        <p class="step__day">Days 2 to 3</p>
+        <h3>Draft</h3>
+        <p>We build your first draft and send you a preview link.</p>
+      </li>
+      <li class="step">
+        <span class="step__dot"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 00-14.5-3.5M4 13a8 8 0 0014.5 3.5"/><path d="M5 3v5h5M19 21v-5h-5"/></svg></span>
+        <p class="step__day">Days 4 to 5</p>
+        <h3>Refine</h3>
+        <p>You ask for changes. Two rounds are included.</p>
+      </li>
+      <li class="step">
+        <span class="step__dot"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 2 5 6 5 10l-2 3H9l-2-3c0-4 2-8 5-10z"/><circle cx="12" cy="9.5" r="1.8"/><path d="M9 15l-2 5 3-1.5M15 15l2 5-3-1.5"/></svg></span>
+        <p class="step__day">Days 6 to 7</p>
+        <h3>Go live</h3>
+        <p>We put your site online, connect your domain, and add it to Google and WhatsApp.</p>
+      </li>
+    </ol>
+    </div>
+    <p class="note" data-reveal>The 7 days start when you send us your business details.</p>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section section--light about" id="about" data-accent="amber">
+  <div class="container about__grid">
+    <div class="about__copy">
+      <p class="eyebrow">About</p>
+      <h2 data-split>About BizEvolve</h2>
+      <p>BizEvolve helps small and local businesses move online without stress. We keep things simple: a clear website, fair prices, and quick delivery. We want every shop owner to feel proud of how their business looks online.</p>
+      <ul class="values">
+        <li class="chip chip--pink">Simple</li>
+        <li class="chip chip--cyan">Honest</li>
+        <li class="chip chip--amber">Fast</li>
+        <li class="chip chip--green">Friendly</li>
+      </ul>
+    </div>
+    <div class="about__art" aria-hidden="true">
+      <div class="orbit">
+        <span class="orbit__ring orbit__ring--1"><i class="o-dot o-dot--pink"></i><i class="o-dot o-dot--cyan"></i></span>
+        <span class="orbit__ring orbit__ring--2"><i class="o-sq o-sq--amber"></i><i class="o-dot o-dot--violet"></i></span>
+        <span class="orbit__ring orbit__ring--3"><i class="o-star"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></i><i class="o-dot o-dot--green"></i></span>
+        <svg class="orbit__core logo-mark" viewBox="0 0 64 64" width="96" height="96">
+          <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#g-brand)"/>
+          <path d="M15 46h10V36h10V26h10V16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="49" cy="14" r="4" fill="#FFB020"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="section section--dark reviews" id="reviews" data-accent="violet" aria-label="Customer reviews">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="container">
+    <div id="reviewsMount">
+      <article class="first-story" data-reveal>
+        <span class="first-story__glow" aria-hidden="true"></span>
+        <svg class="first-story__star" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+        <h2>Be our first success story.</h2>
+        <p>Start your website with BizEvolve and share your experience here.</p>
+        <a class="btn btn--wa btn--lg magnetic" data-wa href="https://wa.me/918249641675?text=Hi%20BizEvolve!%20I%20want%20a%20website%20for%20my%20business.%20Can%20you%20help%20me%3F" target="_blank" rel="noopener noreferrer"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Chat on WhatsApp</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section section--light" id="faq" data-accent="cyan">
+  <div class="container container--narrow">
+    <header class="section__head">
+      <p class="eyebrow">FAQ</p>
+      <h2 data-split>Questions? We have answers.</h2>
+    </header>
+    <div class="faq stagger" id="faqList">
+      <details class="faq__item" data-reveal><summary><span>How much does a website cost?</span><svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary><div class="faq__body"><p>Our plans start from ₹3,000. The price depends on what you need. We tell you the full price before we start.</p></div></details>
+      <details class="faq__item" data-reveal><summary><span>How long does it take?</span><svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary><div class="faq__body"><p>Usually 7 days after you send us your business details.</p></div></details>
+      <details class="faq__item" data-reveal><summary><span>Do I need to know technology?</span><svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary><div class="faq__body"><p>No. Just tell us about your business and send your photos. We do the rest.</p></div></details>
+      <details class="faq__item" data-reveal><summary><span>Who owns the domain and the website?</span><svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary><div class="faq__body"><p>You do. The domain is registered in your name.</p></div></details>
+      <details class="faq__item" data-reveal><summary><span>Can I change things later?</span><svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary><div class="faq__body"><p>Yes. Two rounds of changes are included while we build. Later updates are available in our yearly care plan.</p></div></details>
+      <details class="faq__item" data-reveal><summary><span>What do you need from me?</span><svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary><div class="faq__body"><p>Your business name, services and prices, address, phone number, a few photos, and any customer reviews you already have.</p></div></details>
+      <details class="faq__item" data-reveal><summary><span>What if I do not like the first draft?</span><svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary><div class="faq__body"><p>Tell us what to change. Two rounds of changes are included.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section section--dark contact" id="contact" data-accent="emerald">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="container contact__grid">
+    <div class="contact__copy">
+      <p class="eyebrow">Contact</p>
+      <h2 data-split>Let's put your business online</h2>
+      <p class="section__sub">Message us on WhatsApp or fill the short form. We reply as soon as we can.</p>
+      <div class="contact__btns">
+        <a class="btn btn--wa btn--xl pulse magnetic" data-wa href="https://wa.me/918249641675?text=Hi%20BizEvolve!%20I%20want%20a%20website%20for%20my%20business.%20Can%20you%20help%20me%3F" target="_blank" rel="noopener noreferrer"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Chat on WhatsApp</span></a>
+        <a class="btn btn--ghost btn--lg" href="tel:+918249641675" data-phone><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><span>Call +91 82496 41675</span></a>
+        <a class="btn btn--ghost btn--lg" href="mailto:sakshirsharma@gmail.com" data-email><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg><span>Email us</span></a>
+      </div>
+      <p class="contact__loc"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg><span>Based in Bangalore. Serving Bangalore and Bihar. Online for everyone.</span></p>
+    </div>
+
+    <form class="form" id="contactForm" novalidate autocomplete="on">
+      <h3 class="form__title">Tell us about your business</h3>
+      <div class="field">
+        <input id="f-name" name="name" type="text" autocomplete="name" placeholder=" " required>
+        <label for="f-name">Your name</label>
+        <p class="field__err" id="e-name" role="alert"></p>
+      </div>
+      <div class="field field--select">
+        <select id="f-type" name="type" required>
+          <option value="" selected disabled></option>
+          <option>Coaching centre</option><option>Clinic</option><option>Salon</option><option>Shop</option><option>Restaurant or tiffin</option><option>Other</option>
+        </select>
+        <label for="f-type">Business type</label>
+        <svg class="i field__chev" aria-hidden="true"><use href="#i-chevron"/></svg>
+        <p class="field__err" id="e-type" role="alert"></p>
+      </div>
+      <div class="field">
+        <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder=" " required>
+        <label for="f-phone">Phone number</label>
+        <p class="field__err" id="e-phone" role="alert"></p>
+      </div>
+      <div class="field field--select">
+        <select id="f-plan" name="plan">
+          <option value="" selected></option>
+          <option>Starter</option><option>Standard</option><option>Growth</option><option>Not sure yet</option>
+        </select>
+        <label for="f-plan">Package interest (optional)</label>
+        <svg class="i field__chev" aria-hidden="true"><use href="#i-chevron"/></svg>
+      </div>
+      <div class="field">
+        <textarea id="f-msg" name="message" rows="3" placeholder=" "></textarea>
+        <label for="f-msg">Short message (optional)</label>
+      </div>
+      <button class="btn btn--wa btn--lg btn--block form__submit" type="submit" id="formSubmit">
+        <span class="form__label">Send on WhatsApp</span>
+        <svg class="i form__check" aria-hidden="true"><use href="#i-check"/></svg>
+      </button>
+      <p class="form__note">This opens WhatsApp with your details filled in.</p>
+      <p class="form__note form__fallback" id="formFallback" hidden>WhatsApp did not open? <a href="https://wa.me/918249641675?text=Hi%20BizEvolve!%20I%20want%20a%20website%20for%20my%20business.%20Can%20you%20help%20me%3F" target="_blank" rel="noopener noreferrer">Tap here to open it.</a></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer section--dark">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="logo" href="#top" aria-label="BizEvolve, back to top">
+          <svg class="logo-mark" viewBox="0 0 64 64" width="42" height="42" aria-hidden="true" focusable="false">
+            <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#g-brand)"/>
+            <path d="M15 46h10V36h10V26h10V16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="49" cy="14" r="4" fill="#FFB020"/>
+          </svg>
+          <span class="logo__word">Biz<span class="grad-text">Evolve</span></span>
+        </a>
+        <p>Modernize your business. Go online in 7 days.</p>
+      </div>
+      <nav class="footer__col" aria-label="Footer">
+        <p class="footer__h">Quick links</p>
+        <a href="#services">Services</a><a href="#samples">Samples</a><a href="#pricing">Pricing</a><a href="#how">How it works</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="footer__col">
+        <p class="footer__h">Contact</p>
+        <a data-wa href="https://wa.me/918249641675?text=Hi%20BizEvolve!%20I%20want%20a%20website%20for%20my%20business.%20Can%20you%20help%20me%3F" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="tel:+918249641675" data-phone>+91 82496 41675</a>
+        <a href="mailto:sakshirsharma@gmail.com" data-email>sakshirsharma@gmail.com</a>
+        <span>Based in Bangalore</span>
+      </div>
+    </div>
+    <p class="footer__giant" aria-hidden="true">BizEvolve</p>
+    <div class="footer__bottom">
+      <p>&copy; 2026 BizEvolve. All rights reserved.</p>
+      <button class="motion-toggle" id="motionToggle" type="button" aria-pressed="false">Reduce motion</button>
+    </div>
+  </div>
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top"><svg class="i" aria-hidden="true"><use href="#i-rocket"/></svg></button>
+</footer>
+
+<!-- Floating buttons -->
+<a class="fab fab--wa" id="fabWa" data-wa href="https://wa.me/918249641675?text=Hi%20BizEvolve!%20I%20want%20a%20website%20for%20my%20business.%20Can%20you%20help%20me%3F" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+  <svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg><span class="fab__tip">Chat with us</span>
+</a>
+<a class="fab fab--call" id="fabCall" href="tel:+918249641675" data-phone aria-label="Call BizEvolve"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg></a>
+
+<!-- Sample modal -->
+<div class="modal" id="sampleModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+  <div class="modal__backdrop" data-close-modal></div>
+  <div class="modal__panel">
+    <button class="modal__close" type="button" data-close-modal aria-label="Close preview"><svg class="i" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <div class="modal__device"><div class="device device--big"><div class="device__screen" id="modalScreen"></div></div></div>
+    <div class="modal__info">
+      <span class="sample__badge sample__badge--static">Sample concept</span>
+      <h3 id="modalTitle">Concept</h3>
+      <p id="modalBlurb"></p>
+      <p class="modal__note">This is a made-up business. Yours can look like this, with your own name, photos and colours.</p>
+      <div class="modal__btns">
+        <a class="btn btn--wa" id="modalWa" href="https://wa.me/918249641675?text=Hi%20BizEvolve!%20I%20want%20a%20website%20for%20my%20business.%20Can%20you%20help%20me%3F" target="_blank" rel="noopener noreferrer"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>I want a site like this</span></a>
+        <a class="btn btn--ghost" id="modalLive" href="#" target="_blank" rel="noopener noreferrer" hidden><span>Open live site</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+
+<script src="js/config.js" defer></script>
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
+<script src="vendor/lenis.min.js" defer></script>
+<script src="js/ui.js" defer></script>
+<script src="js/form.js" defer></script>
+<script src="js/hero-canvas.js" defer></script>
+<script src="js/cursor.js" defer></script>
+<script src="js/animations.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+/* ==========================================================
+   animations.css - keyframes and motion helpers
+   Scroll-driven reveals are done by GSAP (js/animations.js).
+   Everything here is CSS-only so it keeps working if JS fails.
+   ========================================================== */
+
+@keyframes draw-on { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+@keyframes ripple { to { transform: scale(4); opacity: 0; } }
+@keyframes wa-pulse {
+  0% { box-shadow: 0 10px 30px rgba(6, 122, 87, .45), 0 0 0 0 rgba(16, 185, 129, .55); }
+  70% { box-shadow: 0 10px 30px rgba(6, 122, 87, .45), 0 0 0 22px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 10px 30px rgba(6, 122, 87, .45), 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+@keyframes aurora-x { to { background-position: 300% 0; } }
+@keyframes float-y { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+@keyframes spin-angle { to { --angle: 360deg; } }
+@keyframes ring { 0% { transform: scale(1); opacity: .9; } 100% { transform: scale(1.75); opacity: 0; } }
+@keyframes rocket-shake { 0%, 100% { transform: translate(0, 0); } 25% { transform: translate(-1px, 1px) rotate(-3deg); } 75% { transform: translate(1px, -1px) rotate(3deg); } }
+@keyframes rocket-up { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(-140vh); opacity: 1; } }
+@keyframes soft-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
+@keyframes pop-in { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes icon-wiggle { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-9deg) scale(1.08); } 60% { transform: rotate(7deg) scale(1.08); } }
+@keyframes bounce-glow { 0%, 100% { transform: translateY(0) scale(1); } 40% { transform: translateY(-.1em) scale(1.12); } 60% { transform: translateY(0) scale(1); } }
+@keyframes shimmer { to { background-position: 300% 0; } }
+@keyframes scroll-dot { 0% { transform: translateY(0); opacity: 1; } 70% { transform: translateY(14px); opacity: 0; } 100% { opacity: 0; } }
+@keyframes mq-left { to { transform: translateX(-50%); } }
+@keyframes mq-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+@keyframes blob-morph { 0%, 100% { border-radius: 42% 58% 60% 40% / 45% 40% 60% 55%; } 50% { border-radius: 58% 42% 40% 60% / 60% 55% 45% 40%; } }
+@keyframes drift { 0%, 100% { transform: translate(0, 0) rotate(0); } 50% { transform: translate(14px, -22px) rotate(12deg); } }
+
+/* ---------- looping touches (not in the Minimal tier) ---------- */
+html:not([data-tier="minimal"]) .hero__line2 .aurora-text { animation: shimmer 8s linear infinite; }
+.seven { display: inline-block; -webkit-text-fill-color: #FFB020; color: #FFB020; background: none; }
+html:not([data-tier="minimal"]) .seven { animation: bounce-glow 2.8s ease-in-out infinite; }
+html:not([data-tier="minimal"]) .scroll-cue__mouse i { animation: scroll-dot 1.8s ease-in infinite; }
+html:not([data-tier="minimal"]) .shape--ring { animation: drift 9s ease-in-out infinite; }
+html:not([data-tier="minimal"]) .shape--sq { animation: drift 7s -2s ease-in-out infinite; }
+html:not([data-tier="minimal"]) .shape--blob { animation: blob-morph 10s ease-in-out infinite; }
+html:not([data-tier="minimal"]) .shape--star { animation: spin-slow 14s linear infinite; }
+html:not([data-tier="minimal"]) .shape--ring2 { animation: drift 8s -4s ease-in-out infinite; }
+html:not([data-tier="minimal"]) .hero__aurora { animation: drift 18s ease-in-out infinite; }
+html:not([data-tier="minimal"]) .icon-badge .ico { animation: float-y 4.5s ease-in-out infinite; }
+html:not([data-tier="minimal"]) .card:nth-child(2) .icon-badge .ico { animation-delay: -1.2s; }
+html:not([data-tier="minimal"]) .card:nth-child(3) .icon-badge .ico { animation-delay: -2.4s; }
+html:not([data-tier="minimal"]) .footer__giant:hover { letter-spacing: -.02em; background-image: var(--grad-aurora); background-size: 300% 100%; animation: shimmer 4s linear infinite; -webkit-text-fill-color: transparent; }
+
+/* ---------- marquee (CSS animation; paused on hover) ---------- */
+html:not([data-tier="minimal"]):not(.no-js) .marquee__track { animation: mq-left 38s linear infinite; }
+html:not([data-tier="minimal"]):not(.no-js) .marquee__row[data-dir="right"] .marquee__track { animation-name: mq-right; animation-duration: 44s; }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+/* JS duplicates each list once, so -50% is a perfect loop */
+
+/* ---------- hero scene: "the website builds itself" (11s loop) ---------- */
+@keyframes bIn1 { 0%, 3% { opacity: 0; transform: translateY(-14px); } 8%, 92% { opacity: 1; transform: none; } 97%, 100% { opacity: 0; transform: translateY(-14px); } }
+@keyframes bIn2 { 0%, 7% { opacity: 0; transform: translateY(16px); } 12%, 92% { opacity: 1; transform: none; } 97%, 100% { opacity: 0; transform: translateY(16px); } }
+@keyframes bIn3 { 0%, 28% { opacity: 0; transform: scale(.6) rotate(-4deg); } 36%, 92% { opacity: 1; transform: none; } 97%, 100% { opacity: 0; transform: scale(.6); } }
+@keyframes bIn4 { 0%, 38% { opacity: 0; transform: translateY(22px); } 46%, 92% { opacity: 1; transform: none; } 97%, 100% { opacity: 0; transform: translateY(22px); } }
+@keyframes bIn5 { 0%, 50% { opacity: 0; transform: translateY(16px) scale(.9); } 56%, 92% { opacity: 1; transform: none; } 97%, 100% { opacity: 0; transform: translateY(16px) scale(.9); } }
+@keyframes wa-btn-pulse { 0%, 100% { box-shadow: 0 10px 22px -6px rgba(6, 122, 87, .6), 0 0 0 0 rgba(16, 185, 129, .6); } 50% { box-shadow: 0 10px 22px -6px rgba(6, 122, 87, .6), 0 0 0 10px rgba(16, 185, 129, 0); } }
+@keyframes type1 { 0%, 9% { width: 0; border-color: var(--pink); } 20%, 94% { width: 12ch; border-color: transparent; } 98%, 100% { width: 0; } }
+@keyframes type2 { 0%, 20% { width: 0; border-color: var(--pink); } 31%, 94% { width: 16ch; border-color: transparent; } 98%, 100% { width: 0; } }
+@keyframes bubble-pop { 0%, 62% { opacity: 0; transform: translateY(20px) scale(.6); } 68% { opacity: 1; transform: translateY(-6px) scale(1.06); } 72%, 90% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; transform: translateY(-10px) scale(.9); } }
+
+html.js:not([data-tier="minimal"]) .scene { --loop: 11s; }
+html.js:not([data-tier="minimal"]) .b-in--1 { animation: bIn1 var(--loop) ease-out infinite; }
+html.js:not([data-tier="minimal"]) .b-in--2 { animation: bIn2 var(--loop) ease-out infinite; }
+html.js:not([data-tier="minimal"]) .b-in--3 { animation: bIn3 var(--loop) cubic-bezier(.34, 1.56, .64, 1) infinite; }
+html.js:not([data-tier="minimal"]) .b-in--4 { animation: bIn4 var(--loop) ease-out infinite; }
+html.js:not([data-tier="minimal"]) .b-in--5 { animation: bIn5 var(--loop) cubic-bezier(.34, 1.56, .64, 1) infinite, wa-btn-pulse 1.8s 6s infinite; }
+html.js:not([data-tier="minimal"]) .b-type { width: 0; border-right: 2px solid var(--pink); animation: type1 var(--loop) steps(12) infinite; }
+html.js:not([data-tier="minimal"]) .b-type--2 { animation-name: type2; animation-timing-function: steps(16); }
+html.js:not([data-tier="minimal"]) .bubble { animation: bubble-pop var(--loop) ease-out infinite; }
+html.js:not([data-tier="minimal"]) .scene.is-paused *, html:not([data-tier="minimal"]) .hero.is-paused .shape { animation-play-state: paused !important; }
+
+/* Orbiting chips (only where animated custom properties work) */
+@property --orb { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+@keyframes orbit-spin { from { --orb: var(--start, 0deg); } to { --orb: calc(var(--start, 0deg) + 360deg); } }
+@keyframes orbit-spin-a { from { --orb: 0deg; } to { --orb: 360deg; } }
+.has-props .scene .orbit-chip { left: 50%; top: 50%; right: auto; bottom: auto; margin: 0; --R: calc(var(--sw) * .56); }
+@media (max-width: 700px) { .has-props .scene .orbit-chip { --R: calc(var(--sw) * .34); } }
+html:not([data-tier="minimal"]).has-props .scene .orbit-chip {
+  transform: scaleY(.66) rotate(var(--orb)) translateX(var(--R)) rotate(calc(var(--orb) * -1)) scaleY(1.52) translate(-50%, -50%);
+  animation: orbit-spin-a 40s linear infinite;
+}
+html:not([data-tier="minimal"]).has-props .scene .orbit-chip--1 { animation-delay: -4s; }
+html:not([data-tier="minimal"]).has-props .scene .orbit-chip--2 { animation-delay: -14s; }
+html:not([data-tier="minimal"]).has-props .scene .orbit-chip--3 { animation-delay: -24s; }
+html:not([data-tier="minimal"]).has-props .scene .orbit-chip--4 { animation-delay: -34s; }
+
+/* ---------- JS-driven reveal helpers ---------- */
+.split-line { display: block; }
+.w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .12em; margin-bottom: -.12em; }
+.wi { display: inline-block; will-change: transform; }
+.js-anim [data-reveal], .js-anim [data-hero-in] { will-change: transform, opacity; }
+
+/* ---------- Minimal tier: no animation, everything visible ---------- */
+html[data-tier="minimal"] *, html[data-tier="minimal"] *::before, html[data-tier="minimal"] *::after {
+  animation: none !important;
+  scroll-behavior: auto !important;
+}
+html[data-tier="minimal"] .hero__canvas, html[data-tier="minimal"] .bg-glow { display: none !important; }
+html[data-tier="minimal"] .orbit-chip { animation: none !important; }
+html[data-tier="minimal"] .hero__aurora { filter: none; }
+html[data-tier="minimal"] .plan:hover, html[data-tier="minimal"] .sample__open:hover { transform: none; }
+html[data-tier="minimal"] .steps-wrap { --p: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  html *, html *::before, html *::after { animation: none !important; scroll-behavior: auto !important; }
+}
+
+/* Lite tier: lighter effects */
+html[data-tier="lite"] .hero__aurora { filter: none; }
+html[data-tier="lite"] .grain { display: none; }
+html[data-tier="lite"] .bg-glow { display: none; }
+html[data-tier="lite"] .shape--blob { display: none; }

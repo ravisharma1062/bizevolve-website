@@ -1,0 +1,143 @@
+/* ==========================================================
+   base.css - reset, variables, typography
+   ========================================================== */
+@font-face { font-family: "Sora"; src: url("../assets/fonts/sora-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Sora"; src: url("../assets/fonts/sora-600.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Sora"; src: url("../assets/fonts/sora-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Sora"; src: url("../assets/fonts/sora-800.woff2") format("woff2"); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("../assets/fonts/inter-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("../assets/fonts/inter-500.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("../assets/fonts/inter-600.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("../assets/fonts/inter-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+@property --angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+
+:root {
+  color-scheme: light;
+
+  --ink: #0B1020;
+  --ink-2: #151B33;
+  --violet: #7C3AED;
+  --indigo: #4F46E5;
+  --cyan: #06B6D4;
+  --pink: #FF4D8D;
+  --amber: #FFB020;
+  --emerald: #10B981;
+  --cloud: #F6F7FF;
+  --white: #FFFFFF;
+
+  /* text colours that pass WCAG AA */
+  --text: #1B2140;
+  --text-soft: #48506f;
+  --text-on-dark: #F4F5FF;
+  --text-on-dark-soft: #B9BEDD;
+  --violet-text: #6D28D9;          /* violet that is readable on light */
+  --wa: #067A57;                   /* WhatsApp-style green, white text on it passes WCAG AA */
+  --wa-dark: #04604A;
+
+  --grad-brand: linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%);
+  --grad-warm: linear-gradient(135deg, #FF4D8D 0%, #FFB020 100%);
+  --grad-fresh: linear-gradient(135deg, #06B6D4 0%, #10B981 100%);
+  --grad-aurora: linear-gradient(100deg, #7C3AED, #FF4D8D, #06B6D4, #FFB020, #7C3AED);
+
+  --a1: var(--violet);             /* per-section accent pair */
+  --a2: var(--cyan);
+
+  --font-head: "Sora", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --r-sm: 14px;
+  --r-md: 20px;
+  --r-lg: 28px;
+  --r-xl: 32px;
+
+  --shadow-1: 0 1px 2px rgba(11, 16, 32, .06), 0 8px 24px rgba(11, 16, 32, .08);
+  --shadow-2: 0 2px 4px rgba(11, 16, 32, .06), 0 18px 48px rgba(79, 70, 229, .16);
+  --shadow-glow: 0 10px 40px rgba(124, 58, 237, .35);
+
+  --nav-h: 72px;
+  --pad: clamp(1rem, 4vw, 2rem);
+  --section-y: clamp(4.5rem, 10vw, 8.5rem);
+  --maxw: 1280px;
+
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: auto;
+  scroll-padding-top: calc(var(--nav-h) + 8px);
+  background: var(--ink);
+}
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: clamp(1rem, .96rem + .2vw, 1.125rem);
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--cloud);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+html.no-scroll, html.no-scroll body { overflow: hidden; }
+
+img, svg, canvas { max-width: 100%; }
+svg { display: inline-block; vertical-align: middle; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+h1, h2, h3, h4, p { margin: 0; }
+[hidden] { display: none !important; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-head);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+h2 { font-size: clamp(2rem, 1.2rem + 3.6vw, 3.75rem); }
+h3 { font-size: clamp(1.15rem, 1.05rem + .5vw, 1.45rem); line-height: 1.2; letter-spacing: -.01em; font-weight: 700; }
+
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+.skip-link {
+  position: fixed; left: 1rem; top: -4rem; z-index: 10000;
+  background: var(--white); color: var(--ink); padding: .75rem 1.1rem; border-radius: 12px; font-weight: 700;
+  transition: top .2s;
+}
+.skip-link:focus { top: 1rem; }
+
+/* gradient text with a solid-colour fallback */
+.grad-text { color: var(--cyan); }
+.aurora-text { color: #ff8ab4; }
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .grad-text {
+    background: var(--grad-brand);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+  .aurora-text {
+    background-image: var(--grad-aurora);
+    background-size: 300% 100%;
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+}
+
+:focus { outline: none; }
+:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; border-radius: 8px; }
+.section--dark :focus-visible, .footer :focus-visible, .menu :focus-visible { outline-color: #67e8f9; }
+/* older browsers without :focus-visible keep the outline for keyboard + mouse */
+@supports not selector(:focus-visible) { :focus { outline: 3px solid var(--cyan); outline-offset: 3px; } }
+
+::selection { background: rgba(124, 58, 237, .25); }
