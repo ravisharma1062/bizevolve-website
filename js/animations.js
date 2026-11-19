@@ -57,7 +57,7 @@
     var full = tier === 'full';
 
     /* ----- smooth scroll (Full only) ----- */
-    if (full && window.Lenis) {
+    if (false && window.Lenis) {
       try {
         var lenis = new window.Lenis({ duration: 1.15, smoothWheel: true, wheelMultiplier: 1 });
         Biz.lenis = lenis;
@@ -76,36 +76,36 @@
     var heroIn = $$('[data-hero-in]');
     var line1 = $('.hero__line1');
     var line1Words = line1 ? splitWords(line1) : [];
-    gsap.set(heroIn, { opacity: 0, y: 36 });
-    gsap.set(line1Words, { yPercent: 115, rotate: 7 });
+    gsap.set(heroIn, { opacity: 0, y: 14 });
+    gsap.set(line1Words, { opacity: 0 });
 
     /* ----- headlines: masked word reveal (Lite = simple fade-up) ----- */
     $$('[data-split]').forEach(function (h) {
       if (h === line1) return;
-      if (full) {
+      if (false) {
         var words = splitWords(h);
         gsap.set(words, { yPercent: 115, rotate: 6 });
         ST.create({ trigger: h, start: 'top 88%', once: true, onEnter: function () {
           gsap.to(words, { yPercent: 0, rotate: 0, duration: 1.1, ease: 'expo.out', stagger: .055 });
         } });
       } else {
-        gsap.set(h, { opacity: 0, y: 24 });
-        ST.create({ trigger: h, start: 'top 90%', once: true, onEnter: function () { gsap.to(h, { opacity: 1, y: 0, duration: .8, ease: 'power3.out', clearProps: 'transform,opacity' }); } });
+        gsap.set(h, { opacity: 0, y: 14 });
+        ST.create({ trigger: h, start: 'top 90%', once: true, onEnter: function () { gsap.to(h, { opacity: 1, y: 0, duration: .6, ease: 'power2.out', clearProps: 'transform,opacity' }); } });
       }
     });
 
     /* ----- cards / lists: staggered rise ----- */
     var reveals = $$('[data-reveal]');
     reveals.forEach(function (el) {
-      var o = { opacity: 0, y: 44 };
-      if (full && el.classList.contains('card--why')) { o.rotationX = -18; o.transformPerspective = 900; o.y = 60; }
-      if (el.classList.contains('plan')) { o.y = 70; }
+      var o = { opacity: 0, y: 18 };
+      
+      
       gsap.set(el, o);
     });
     ST.batch(reveals, {
       start: 'top 90%', once: true,
       onEnter: function (els) {
-        gsap.to(els, { opacity: 1, y: 0, rotationX: 0, duration: .95, ease: 'power3.out', stagger: .13, overwrite: 'auto', clearProps: 'transform,opacity' });
+        gsap.to(els, { opacity: 1, y: 0, rotationX: 0, duration: .6, ease: 'power2.out', stagger: .07, overwrite: 'auto', clearProps: 'transform,opacity' });
       }
     });
 
@@ -114,7 +114,7 @@
       var lis = $$('.ticks li', plan);
       gsap.set(lis, { '--t': 0, opacity: .35 });
       ST.create({ trigger: plan, start: 'top 80%', once: true, onEnter: function () {
-        gsap.to(lis, { '--t': 1, opacity: 1, duration: .5, ease: 'back.out(2.5)', stagger: .12, delay: .5 });
+        gsap.to(lis, { '--t': 1, opacity: 1, duration: .4, ease: 'power2.out', stagger: .08, delay: .2 });
       } });
     });
 
@@ -123,7 +123,7 @@
       var paths = $$('path, circle, rect', svg);
       gsap.set(paths, { strokeDashoffset: 100 });
       ST.create({ trigger: svg, start: 'top 90%', once: true, onEnter: function () {
-        gsap.to(paths, { strokeDashoffset: 0, duration: 1.3, ease: 'power2.inOut', stagger: .18, delay: .25 });
+        gsap.to(paths, { strokeDashoffset: 0, duration: .8, ease: 'power2.out', stagger: .08, delay: .1 });
       } });
     });
 
@@ -132,17 +132,17 @@
       var to = parseFloat(el.getAttribute('data-to')) || 0, o = { v: 0 };
       el.textContent = '0';
       ST.create({ trigger: el, start: 'top 92%', once: true, onEnter: function () {
-        gsap.to(o, { v: to, duration: 1.8, ease: 'power2.out', onUpdate: function () { el.textContent = Math.round(o.v); }, onComplete: function () { el.textContent = to; } });
+        gsap.to(o, { v: to, duration: 1.2, ease: 'power2.out', onUpdate: function () { el.textContent = Math.round(o.v); }, onComplete: function () { el.textContent = to; } });
       } });
     });
     var pItems = $$('.promise__item');
-    gsap.set(pItems, { opacity: 0, y: 30, scale: .9 });
-    ST.create({ trigger: '.promise', start: 'top 85%', once: true, onEnter: function () { gsap.to(pItems, { opacity: 1, y: 0, scale: 1, duration: .9, stagger: .15, ease: 'back.out(1.6)' }); } });
+    gsap.set(pItems, { opacity: 0, y: 14 });
+    ST.create({ trigger: '.promise', start: 'top 85%', once: true, onEnter: function () { gsap.to(pItems, { opacity: 1, y: 0, duration: .6, stagger: .08, ease: 'power2.out' }); } });
 
     /* ----- about: chips pop in ----- */
     var chips = $$('.values .chip');
-    gsap.set(chips, { scale: 0, opacity: 0 });
-    ST.create({ trigger: '.values', start: 'top 92%', once: true, onEnter: function () { gsap.to(chips, { scale: 1, opacity: 1, duration: .8, stagger: .12, ease: 'back.out(2.2)' }); } });
+    gsap.set(chips, { opacity: 0 });
+    ST.create({ trigger: '.values', start: 'top 92%', once: true, onEnter: function () { gsap.to(chips, { opacity: 1, duration: .5, stagger: .06, ease: 'power2.out' }); } });
 
     /* ----- how it works: the line draws as you scroll, steps light up ----- */
     var wrap = $('#stepsWrap'), steps = $$('.step');
@@ -153,13 +153,14 @@
         var p = s.progress; wrap.style.setProperty('--p', p.toFixed(4));
         steps.forEach(function (st, i) {
           var on = p >= (i / steps.length) * .92 + .02;
-          if (on && !lit[i]) { lit[i] = true; st.classList.add('is-lit'); gsap.fromTo($('.step__dot', st), { scale: .55 }, { scale: 1, duration: .7, ease: 'back.out(3)' }); }
+          if (on && !lit[i]) { lit[i] = true; st.classList.add('is-lit');  }
           else if (!on && lit[i]) { lit[i] = false; st.classList.remove('is-lit'); }
         });
       } });
     }
 
-    if (!full) return;   // everything below is Full-tier only
+    window.addEventListener('load', function () { setTimeout(function () { ST.refresh(); }, 400); });
+    return;   // calm mode: no glow shifts, parallax or pinned scrolling
 
     /* ----- section colour shift ----- */
     var glow = $('#bgGlow');
@@ -199,9 +200,9 @@
     var $ = Biz.$, $$ = Biz.$$;
     var words = ($('.hero__line1') || {})._split || [];
     var tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-    tl.to($$('[data-hero-in]')[0], { opacity: 1, y: 0, duration: .8 }, 0)
-      .to(words, { yPercent: 0, rotate: 0, duration: 1.2, ease: 'expo.out', stagger: .09 }, .1)
-      .to($$('[data-hero-in]').slice(1), { opacity: 1, y: 0, duration: 1, stagger: .14, clearProps: 'transform,opacity' }, .45);
+    tl.to($$('[data-hero-in]')[0], { opacity: 1, y: 0, duration: .5 }, 0)
+      .to(words, { opacity: 1, duration: .6, stagger: .03 }, .05)
+      .to($$('[data-hero-in]').slice(1), { opacity: 1, y: 0, duration: .6, stagger: .08, clearProps: 'transform,opacity' }, .2);
     return tl;
   };
 })();

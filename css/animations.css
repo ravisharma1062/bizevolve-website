@@ -114,3 +114,9 @@ html[data-tier="lite"] .hero__aurora { filter: none; }
 html[data-tier="lite"] .grain { display: none; }
 html[data-tier="lite"] .bg-glow { display: none; }
 html[data-tier="lite"] .shape--blob { display: none; }
+
+/* ---------- Professional calm-down: remove decorative looping motion ---------- */
+.preloader, .hero__canvas, .grain, .shapes, .bg-glow, .scroll-cue, .orbit-chip { display: none !important; }
+html .hero__line2 .aurora-text, html .seven, html .icon-badge .ico, html .hero__aurora,
+html .footer__giant:hover { animation: none !important; }
+html .b-in--5, html .bubble { animation-iteration-count: 1 !important; }

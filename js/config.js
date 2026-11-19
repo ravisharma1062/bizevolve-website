@@ -9,7 +9,7 @@ window.BIZ = {
   whatsappNumber: "918249641675",        // wa.me format, country code first
   phoneDisplay: "+91 82496 41675",
   phoneLink: "tel:+918249641675",
-  email: "sakshirsharma@gmail.com",       // public contact email. Set to "" to hide all email buttons and links.
+  email: "contact@bizevolve.in",       // public contact email. Set to "" to hide all email buttons and links.
   city: "Bangalore",                      // city only, no street address
   region: "Karnataka",
   country: "IN",

@@ -65,7 +65,7 @@ async function scrollThrough(page) {
   const tel = await p.evaluate(() => Array.from(document.querySelectorAll('a[href^="tel:"]')).map(a => a.getAttribute('href')));
   ok('tel links are tel:+918249641675', tel.length >= 2 && tel.every(h => h === 'tel:+918249641675'), tel.join());
   const mail = await p.evaluate(() => Array.from(document.querySelectorAll('a[href^="mailto:"]')).map(a => a.getAttribute('href')));
-  ok('mailto links', mail.length >= 2 && mail.every(h => h === 'mailto:sakshirsharma@gmail.com'), mail.join());
+  ok('mailto links', mail.length >= 2 && mail.every(h => h === 'mailto:contact@bizevolve.in'), mail.join());
   const txt = await p.innerText('body');
   ok('Based in Bangalore shown', /Based in Bangalore/.test(txt));
   ok('no street address words', !/(\bRoad\b|\bRd\.|\bStreet\b|\bLayout\b|Pin ?code|\b560\d{3}\b)/i.test(txt));
@@ -73,7 +73,7 @@ async function scrollThrough(page) {
   ok('no star ratings / fake numbers', !/(100\+|clients served|5 stars|★)/i.test(txt));
 
   console.log('\n[5] Email hides when BIZ.email is empty');
-  const pe = await newPage(b, {}, async pg => { await pg.route('**/js/config.js', async r => { const res = await r.fetch(); let body = await res.text(); body = body.replace('email: "sakshirsharma@gmail.com"', 'email: ""'); r.fulfill({ response: res, body }); }); });
+  const pe = await newPage(b, {}, async pg => { await pg.route('**/js/config.js', async r => { const res = await r.fetch(); let body = await res.text(); body = body.replace('email: "contact@bizevolve.in"', 'email: ""'); r.fulfill({ response: res, body }); }); });
   await pe.goto(URL + '?tier=lite'); await pe.waitForTimeout(600);
   ok('no mailto links', (await pe.$$('a[href^="mailto:"]')).length === 0);
   ok('no Email us text', !/Email us|gmail/.test(await pe.innerText('body')));
@@ -195,13 +195,13 @@ async function scrollThrough(page) {
     ok(t + ' tier: complete page, no console issues', vis === 0 && tp.logs.length === 0, vis + ' ' + visL.slice(0, 6).join(' ; ') + ' ' + tp.logs.join('|'));
     ok(t + ' tier: data-tier set', (await tp.getAttribute('html', 'data-tier')) === t);
     if (t === 'lite') ok('lite: no lenis, no canvas', !(await tp.evaluate(() => document.documentElement.classList.contains('lenis') || document.documentElement.classList.contains('has-cursor'))) && !(await tp.$eval('#heroCanvas', e => e.classList.contains('is-on'))));
-    if (t === 'full') ok('full: lenis + canvas running', (await tp.evaluate(() => document.documentElement.classList.contains('lenis'))) && (await tp.$eval('#heroCanvas', e => e.classList.contains('is-on'))));
+    if (t === 'full') ok('full: calm mode (no lenis, no canvas)', !(await tp.evaluate(() => document.documentElement.classList.contains('lenis'))) && !(await tp.$eval('#heroCanvas', e => e.classList.contains('is-on'))));
   }
 
   console.log('\n[16] Banned content');
   const files = ['index.html', 'js/config.js', 'js/main.js', 'js/ui.js', 'js/form.js', 'js/animations.js', 'js/cursor.js', 'js/hero-canvas.js', 'css/base.css', 'css/layout.css', 'css/components.css', 'css/animations.css', 'assets/favicon.svg', 'assets/svg/logo.svg', 'robots.txt', 'sitemap.xml'];
   let bad = [];
-  files.forEach(f => { const t = fs.readFileSync(path.join(__dirname, '..', f), 'utf8').replace(/sakshirsharma@gmail\.com/g, ''); const m = t.match(/\b(ravi|sharma|sakshi|infosys|tcs|wipro|accenture|google ?llc)\b/ig); if (m) bad.push(f + ':' + m.join(',')); });
+  files.forEach(f => { const t = fs.readFileSync(path.join(__dirname, '..', f), 'utf8').replace(/contact@bizevolve.in/g, ''); const m = t.match(/\b(ravi|sharma|sakshi|infosys|tcs|wipro|accenture|google ?llc)\b/ig); if (m) bad.push(f + ':' + m.join(',')); });
   ok('no personal / employer names (except published email)', bad.length === 0, bad.join(' '));
   const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
   ok('no aggregateRating/review in JSON-LD', !/aggregateRating|"review"/.test(html));

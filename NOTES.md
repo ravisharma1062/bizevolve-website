@@ -19,7 +19,7 @@ Plain static site. No build step. Open `index.html` through any web server and i
 - **Pinned sideways sample showcase** only runs on wide screens with a mouse. Phones and tablets get a swipe carousel.
 - **WhatsApp button green** is `#067A57` (a little darker than the brand WhatsApp green) so white text passes the AA contrast rule.
 - **Sample concepts** are built with HTML and CSS only (no photos). They are fictional and labelled "Sample concept".
-- **Email.** `sakshirsharma@gmail.com` is published as the plan says. Set `email: ""` in `js/config.js` and every email button, link and text disappears. The email in the JSON-LD block in `index.html` must be removed by hand in that case.
+- **Email.** `contact@bizevolve.in` is published as the plan says. Set `email: ""` in `js/config.js` and every email button, link and text disappears. The email in the JSON-LD block in `index.html` must be removed by hand in that case.
 
 ## 2. How to edit text and prices
 

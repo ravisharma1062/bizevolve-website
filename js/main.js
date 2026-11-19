@@ -53,18 +53,8 @@
     function go(t) {
       root.setAttribute('data-tier', t);
       if (!startEffects(t)) return;
-      if (t === 'full') {
-        runPreloader(function () {
-          Biz.anim.playHero();
-          Biz.ric(function () {
-            try { Biz.startHeroCanvas(); } catch (e) {}
-            try { Biz.initPointer(); } catch (e) {}
-          });
-        });
-      } else {
-        removePreloader();
-        Biz.anim.playHero();
-      }
+      removePreloader();
+      Biz.anim.playHero();
     }
 
     if (tier === 'full' && !/[?&]tier=/.test(location.search)) {
