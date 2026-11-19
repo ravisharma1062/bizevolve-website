@@ -91,7 +91,7 @@
       if (fb) { fb.hidden = false; fb.querySelector('a').href = url; }
       btn.classList.add('is-done');
       confetti();
-      Biz.toast('Opening WhatsApp... we are excited to hear from you!');
+      Biz.toast('Thanks! Opening WhatsApp so we can chat.');
       setTimeout(function () { btn.classList.remove('is-done'); }, 4500);
     });
   }

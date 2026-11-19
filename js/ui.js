@@ -35,7 +35,7 @@
     $$('[data-email]').forEach(function (a) {
       if (!B.email) { a.parentNode.removeChild(a); return; }
       a.href = 'mailto:' + B.email;
-      if (a.closest('.footer')) a.textContent = B.email;
+      if (a.closest('.footer')) a.textContent = B.email; else { var es = $('span', a); if (es) es.textContent = B.email; }
     });
     if (!B.email) {
       // hide any leftover email UI

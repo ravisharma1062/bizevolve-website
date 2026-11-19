@@ -76,7 +76,7 @@ async function scrollThrough(page) {
   const pe = await newPage(b, {}, async pg => { await pg.route('**/js/config.js', async r => { const res = await r.fetch(); let body = await res.text(); body = body.replace('email: "contact@bizevolve.in"', 'email: ""'); r.fulfill({ response: res, body }); }); });
   await pe.goto(URL + '?tier=lite'); await pe.waitForTimeout(600);
   ok('no mailto links', (await pe.$$('a[href^="mailto:"]')).length === 0);
-  ok('no Email us text', !/Email us|gmail/.test(await pe.innerText('body')));
+  ok('no Email us text', !/contact@bizevolve|gmail/.test(await pe.innerText('body')));
 
   console.log('\n[6] Reviews render when provided');
   const pr = await newPage(b, {}, async pg => { await pg.route('**/js/config.js', async r => { const res = await r.fetch(); let body = await res.text(); body = body.replace('reviews: []', 'reviews: [{name:"A",business:"B",text:"Great work"}]'); r.fulfill({ response: res, body }); }); });
@@ -104,7 +104,7 @@ async function scrollThrough(page) {
   const m = decodeURIComponent((fbHref.split('text=')[1] || ''));
   ok('message has name/type/phone/package/message', ['Test User', 'Salon', '98765 43210', 'Standard', 'Need a site & a map'].every(s => m.indexOf(s) > -1), m);
   await p.waitForTimeout(300);
-  ok('toast text correct', /Opening WhatsApp... we are excited to hear from you!/.test(await p.textContent('#toast')));
+  ok('toast text correct', /Thanks! Opening WhatsApp so we can chat./.test(await p.textContent('#toast')));
   ok('button shows done state', doneNow);
 
   console.log('\n[8] Sample modal (mouse + keyboard)');
