@@ -18,7 +18,7 @@ window.BIZ = {
   siteUrl: "https://bizevolve.in",        // used for canonical and social tags. Domain is not live yet.
 
   // Optional: paste a Web3Forms / Formspree endpoint to ALSO send the form by email. Leave "" to turn off.
-  FORM_ENDPOINT: "",
+  FORM_ENDPOINT: "https://formspree.io/f/meagzqpw",
 
   // Default WhatsApp message (people can edit it before sending)
   defaultMessage: "Hi BizEvolve! I want a website for my business. Can you help me?",
